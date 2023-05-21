@@ -21,7 +21,7 @@ with st.spinner('Инициализация нейронной сети...'):
     ####
 
 
-    model = OwlViTForObjectDetection.from_pretrained("google/owlvit-base-patch32")
+    model = OwlViTForObjectDetection.from_pretrained("google/owlvit-base-patch32", load_in_8bit=True)
     processor = OwlViTProcessor.from_pretrained("google/owlvit-base-patch32")
     model = model.to(device)
     model.eval()
